@@ -10,29 +10,26 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="BetVictor challenge" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/base.css">
+
 	</head>
 
 
-	<body id="bet-victor-challenge" class="" >
-		<!--START HEADER-->
-		<header>
+	<body hola-ext-player="1">
 
-		</header>
-		<!--END HEADER-->
-			<!--START MAIN-->
-			<div id="main" class="twelve columns offset-by-one">
-				{+ mainContent /}
-			</div>
-			<!--END MAIN-->
-
-			<!--START FOOTER-->
-			<footer>
-
-			</footer>
-			<!--END FOOTER-->
-
+		<!-- Begin page content -->
+		<div class="container">
+			{+ mainContent /}
 		</div>
-		<!-- END CONTAINER 3-->
+
+		<footer class="footer">
+			<div class="container">
+			<p class="text-muted">BetVictor Challenge done by Ezequiel Rubio.</p>
+			</div>
+		</footer>
+
 
 	</body>
 </html>

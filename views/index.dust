@@ -1,5 +1,10 @@
 {> layout /}
 
 {< mainContent}
-	Bet Victor Live 
+	<div class="page-header">
+		<h1>Bet Victor Live</h1>
+	</div>
+	<p class="lead">If you want to see the sports available
+	follow <a href="/sports">this link</a> 
+	</p>
 {/ mainContent}
