@@ -4,5 +4,10 @@
 	<div class="page-header">
 		<h1>Bet Victor Live Outomes</h1>
 	</div>
-	
+	<p>Outcomes for {event.title}</p>
+	<ul>
+	{#outcomes}
+		<li>{description} - {price}</li>
+	{/outcomes}
+	</ul>
 {/ mainContent}

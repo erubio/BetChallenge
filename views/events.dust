@@ -1,9 +1,0 @@
-{> layout /}
-
-{< mainContent}
-	<div class="page-header">
-		<h1>Bet Victor Live Events</h1>
-	</div>
-	<p class="lead">Events</p>
-
-{/ mainContent}

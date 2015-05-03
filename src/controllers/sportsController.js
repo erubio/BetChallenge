@@ -43,6 +43,7 @@ module.exports.event = function(req, res, next) {
 				eventId = parseInt(req.params.eventId, 10),
 				sport = live.getSport(sportId);
 			res.render('event', {
+				sport: sport,
 				event: sport.getEvent(eventId)
 			});
 		}
@@ -63,6 +64,7 @@ module.exports.outcomes = function(req, res, next) {
 				sport = live.getSport(sportId),
 				event = sport.getEvent(eventId);
 			res.render('outcomes', {
+				event: event,
 				outcomes: event.getSortedOutcomes()
 			});
 		}

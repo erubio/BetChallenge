@@ -8,10 +8,5 @@
 	<p>{event.meeting}</p>
 	
 	<p>{event.status} {event.score}</p>
-	<p>Outcomes</p>
-	<ul>
-	{#event.outcomes}
-		<li>{description} - {price}</li>
-	{/event.outcomes}
-	</ul>
+	<p><a href="/sports/{sport.id}/events/{event.id}/outcomes">See Outcomes</a></p>
 {/ mainContent}

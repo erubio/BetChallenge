@@ -33,6 +33,7 @@ describe('Sports Controller', function() {
 				expect(res._getRenderView()).to.equal('event');
 				expect(data).to.be.an('object');
 				expect(data.event).to.be.an('object');
+				expect(data.sport).to.be.an('object');
 				done();	
 			}, 10);
 			
