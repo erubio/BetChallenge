@@ -1,11 +1,21 @@
 'use strict';
 
+/*
+* Function that copy options to object
+* @param {Object} obj -> Object to create
+* @param {object} options -> JSON with key values
+*/
 function assignKeys(obj, options) {
 	for(var key in options) {
 		obj[key] = options[key];
 	}	
 }
 
+/*
+* Function that order the array based on pos property
+* @param {Array} array -> Array to order
+* @return {Array} sorted array 
+*/
 function orderByPos(array) {
 	return array.sort(function(a,b){
 		if(a.pos > b.pos) {
@@ -18,6 +28,12 @@ function orderByPos(array) {
 	});
 }
 
+/*
+* Function that order the array based on pos property
+* @param {Array} array -> Array to order
+* @param {Number} id -> Element id
+* @return {Object} -> obeject of the array or null
+*/
 function getById(array, id) {
 	var obj = array.filter(function(a) {
 		return a.id === id;
@@ -29,6 +45,9 @@ function getById(array, id) {
 	}	
 }
 
+/*
+* Sport object
+*/
 function Sport(options) {
 	var events = [];
 	assignKeys(this, options);
@@ -37,7 +56,9 @@ function Sport(options) {
 	});
 	this.events = events;
 }
-
+/*
+* Event object
+*/
 function Event(options){
 	var outcomes = [];
 	assignKeys(this, options);
@@ -46,12 +67,18 @@ function Event(options){
 	});
 }
 
+/*
+* Outcome object
+*/
 function Outcome(options) {
 	for(var key in options) {
 		this[key] = options[key];
 	}	
 }
 
+/*
+* Lve object
+*/
 function Live(options) {
 	var sports = [];
 	this.version = options.version;
@@ -61,6 +88,9 @@ function Live(options) {
 	this.sports = sports;
 }
 
+/*
+* Objects prototypes
+*/
 Live.prototype.getSortedSports = function(){
 	return orderByPos(this.sports);
 };
