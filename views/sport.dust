@@ -1,0 +1,14 @@
+{> layout /}
+
+{< mainContent}
+	<div class="page-header">
+		<h1>Bet Victor Live Sport</h1>
+	</div>
+	<p class="lead">{sport.title}</p>
+	<ul>
+		{#sport.events}
+		<li><a href="/sports/{sport.id}/events/{id}">{title}</a></li>
+		{/sport.events}
+	<ul>
+
+{/ mainContent}

@@ -1,0 +1,17 @@
+{> layout /}
+
+{< mainContent}
+	<div class="page-header">
+		<h1>Bet Victor Live Event</h1>
+	</div>
+	<p class="lead">{event.title}</p>
+	<p>{event.meeting}</p>
+	
+	<p>{event.status} {event.score}</p>
+	<p>Outcomes</p>
+	<ul>
+	{#event.outcomes}
+		<li>{description} - {price}</li>
+	{/event.outcomes}
+	</ul>
+{/ mainContent}

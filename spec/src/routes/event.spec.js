@@ -5,18 +5,22 @@ var expect = require('chai').expect,
 	sportsController = require('../../../src/controllers/sportsController'),
 	helpers = require('../../helpers/test_helpers'),
 	httpMocks = require('node-mocks-http'),
-	handler = sportsController.sports,
+	handler = sportsController.event,
 	req, res;
 
 describe('Sports Controller', function() {
-	describe('sports handler', function(){
+	describe('event handler', function(){
 		beforeEach(function(){
 			nock('http://www.betvictor.com/')
 				.get('/live/en/live/list.json')
 				.reply(200, helpers.loadJsonFixture('/live.json'));
 			req = httpMocks.createRequest({
 				method: 'GET',
-				url: '/sports'
+				url: '/sport/100/event/270558510',
+				params: {
+					sportId: '100',
+					eventId: '270558510'
+				}
 			});
 			res = httpMocks.createResponse();
 		});
@@ -26,9 +30,9 @@ describe('Sports Controller', function() {
 			handler(req, res);
 			setTimeout(function(){
 				var data = res._getRenderData();
-				expect(res._getRenderView()).to.equal('sports');
+				expect(res._getRenderView()).to.equal('event');
 				expect(data).to.be.an('object');
-				expect(data.sports).to.be.an('array');
+				expect(data.event).to.be.an('object');
 				done();	
 			}, 10);
 			
@@ -42,7 +46,10 @@ describe('Sports Controller', function() {
 				.reply(500, {statusCode: 500});
 			req = httpMocks.createRequest({
 				method: 'GET',
-				url: '/sports'
+				url: '/sport/100',
+				params: {
+					sportId: '100'	
+				}
 			});
 			res = httpMocks.createResponse();
 		});

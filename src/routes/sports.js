@@ -10,10 +10,8 @@ sportRouter.get('/', sportsCtrl.sports);
 /* GET  */
 sportRouter.get('/:sportId', sportsCtrl.sport);
 
-/* GET */
-sportRouter.get('/:sportId/events', sportsCtrl.events);
-
-
 sportRouter.get('/:sportId/events/:eventId', sportsCtrl.event);
+
+sportRouter.get('/:sportId/events/:eventId/outcomes', sportsCtrl.outcomes);
 
 module.exports = sportRouter;
